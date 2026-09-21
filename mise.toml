@@ -1,2 +1,6 @@
 [tools]
+argocd = "latest"
+helm = "latest"
 k3d = "latest"
+kubectx = "latest"
+kubens = "latest"

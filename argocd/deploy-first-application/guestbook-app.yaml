@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/abdulshukor/argocd-example-apps.git
+    targetRevision: HEAD # In production use specific tag or hashes. HEAD = Latest commit
+    path: helm-guestbook
+    helm:
+      valueFiles:
+        - values-custom.yaml
+      valuesObject:
+        replicaCount: 1
+        service:
+          type: NodePort
+      parameters:
+        - name: replicaCount
+          value: "2"
+  destination:
+    server: https://kubernetes.default.svc # For remote cluster you need to specify. Here is local cluster.
+    namespace: default
