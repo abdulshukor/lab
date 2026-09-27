@@ -16,7 +16,7 @@
     "source=devpod-docker-data,target=/var/lib/docker,type=volume"
   ],
 
-  "postCreateCommand": "bash ./scripts/post-create",
+  "postCreateCommand": "bash ./scripts/setup",
 
   "forwardPorts": [
     10115,
