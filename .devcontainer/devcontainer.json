@@ -12,7 +12,11 @@
     }
   },
 
-  "postCreateCommand": "bash ./scripts/setup",
+  "mounts": [
+    "source=devpod-docker-data,target=/var/lib/docker,type=volume"
+  ],
+
+  "postCreateCommand": "bash ./scripts/post-create",
 
   "forwardPorts": [
     10115,
