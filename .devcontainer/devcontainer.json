@@ -6,10 +6,12 @@
 
   "privileged": true,
 
-  "postCreateCommand": "scripts/setup",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:3": {}
   },
+
+  "postCreateCommand": "scripts/setup",
+
   "forwardPorts": [
     10115,
     10116,
