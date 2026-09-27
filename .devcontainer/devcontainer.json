@@ -4,16 +4,12 @@
     "dockerfile": "Dockerfile"
   },
 
-  "privileged": true,
-
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:3": {
-      "iptablesSwitchAtRuntime": false
-    }
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
 
   "mounts": [
-    "source=devpod-docker-data,target=/var/lib/docker,type=volume"
+    "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
   ],
 
   "postCreateCommand": "bash ./scripts/setup",
