@@ -3,11 +3,13 @@
     "context": "..",
     "dockerfile": "Dockerfile"
   },
-  // "privileged": true,
+
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:3": {}
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
-  "postCreateCommand": "scripts/setup",
+
+  "postCreateCommand": "bash ./scripts/setup",
+
   "forwardPorts": [
     10115,
     10116,
