@@ -4,8 +4,10 @@
     "dockerfile": "Dockerfile"
   },
 
+  "privileged": true,
+
   "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:3": {}
   },
 
   "postCreateCommand": "bash ./scripts/setup",
