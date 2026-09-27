@@ -17,11 +17,11 @@ spec:
         app: abdul
     spec:
       containers:
-      - image: httpd
-        name: httpd
+        - image: httpd
+          name: httpd
 
   strategy:
-   type: RollingUpdate
-   rollingUpdate:
-     maxUnavailable: 1
-     maxSurge: 1      
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
