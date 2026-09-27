@@ -4,11 +4,13 @@
     "dockerfile": "Dockerfile"
   },
 
-  "privileged": true,
-
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:3": {}
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
+
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+  ],
 
   "postCreateCommand": "bash ./scripts/setup",
 
