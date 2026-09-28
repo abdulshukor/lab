@@ -12,6 +12,10 @@
     "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
   ],
 
+  "runArgs": [
+    "--add-host=host.docker.internal:host-gateway"
+  ],
+
   "postCreateCommand": "bash ./scripts/setup",
 
   "forwardPorts": [
